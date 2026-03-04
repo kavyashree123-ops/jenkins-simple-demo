@@ -5,15 +5,21 @@ pipeline {
 
     stage('Clone') {
       steps {
-        git url: 'https://github.com/Sharanya21-ai/jenkins_simple_demo.git',
+        git url: 'https://github.com/kavyashree123-ops/jenkins-simple-demo.git',
             branch: 'main'
+      }
+    }
+
+    stage('Verify Files') {
+      steps {
+        sh 'ls -la'
       }
     }
 
     stage('Run Python Script') {
       steps {
-        sh 'python3 --version'     // optional: check python
-        sh 'python3 python.py'     // runs your python file
+        sh 'python3 --version'
+        sh 'python3 python.py'
       }
     }
 
